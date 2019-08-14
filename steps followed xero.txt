@@ -1,0 +1,16 @@
+1) //Declare the class
+2)// maximize browser window
+3)//open Xero Login page  or only to check account part direct link login 'https://go.xero.com/Bank/BankAccounts.aspx' got to step 8
+4)//Enter login username
+5)//enter password
+6)//Click login button
+7)//Find Bank account from Drop down box
+8)//click on Add tab on "add bank account"
+9)//select ANZ from search field
+10)//enter account name and account type
+11)//select account type
+12)//Select "every day" account from drop down
+13)//enter BSB details
+14)//enter account Number
+15)//Click on Continue button to progress further
+16)//Verify successful additional message info

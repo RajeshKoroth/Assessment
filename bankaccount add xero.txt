@@ -110,10 +110,8 @@ public class bankaccountadd {
 				WebElement successMessage = driver.findElement(By.xpath("//div[@id='flash']"));
 				String expectedMessage = "rajesh has been added";
 				String actualMessage = successMessage.getText();
-				// Assert.assertEquals(actualMessage, expectedMessage, "Actual message is not
-				// the same as expected");
 				Assert.assertTrue(actualMessage.contains(expectedMessage),
-						"Actual message does not contain expected message.\nActual Message: " + actualMessage
+				"Actual message does not contain expected message.\nActual Message: " + actualMessage
 								+ "\nExpected Message: " + expectedMessage);
 		
 				//close browser

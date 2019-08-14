@@ -59,7 +59,7 @@ public class bankaccountadd {
 		
 		//Find Bank account from Drop down box
                 Select  bankaccounttype = new  select(driver.findElement(By.xpath("//a[@cclass='xrh-submenu']"));
-		Drpaccounttype.selectByVisibleText(ìBANKACCOUNTî)
+		Drpaccounttype.selectByVisibleText(‚ÄúBANKACCOUNT‚Äù)
 		BankaccountButton.click();
 		sleep(1000);
 		
@@ -88,8 +88,8 @@ public class bankaccountadd {
 		
 		//Select "every day" account from drop down
 		
-		Select  drpaccounttype = new  select(driver.findElement(By.name(ìaccounttype-1039-inputEl"));
-		Drpaccounttype.selectByVisibleText(ìEvery-day-dayî)
+		Select  drpaccounttype = new  select(driver.findElement(By.name(‚Äúaccounttype-1039-inputEl"));
+		Drpaccounttype.selectByVisibleText(‚ÄúEvery-day-day‚Äù)
 
 					
 		//enter BSB details
@@ -121,11 +121,7 @@ public class bankaccountadd {
 				//close browser
 				driver.quit();
 		
-		
-		//		 logout button is visible
-		//WebElement logOutButton = driver.findElement(By.xpath("//a[@class='button secondary radius']"));
-		
-			
+							
 		//close browser
 		driver.quit();
 		

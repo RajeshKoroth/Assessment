@@ -1,0 +1,145 @@
+package com.bankacountadd;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+
+
+public class bankaccountadd {
+	
+	@Test
+	
+	public void loginTest() {
+		System.out.println("Starting loginTest");
+		
+		//Create driver
+		
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		//sleep for 10 sec
+		sleep(1000);
+		
+		// maximize browser window
+		driver.manage().window().maximize();
+		
+		//open Xero Login page  or  directly login th the bank account page https://go.xero.com/Bank/BankAccounts.aspx' got to step 8
+		
+		String url = "https://central.xero.com/s/article/Log-into-Xero";
+		driver.get(url);
+		System.out.println("Page is opened.");
+		sleep (1000);
+		
+		//Enter username
+		
+		WebElement username = driver.findElement(By.id("username"));
+		username.sendKeys("Rajesh");
+		//enter password
+		
+		WebElement password = driver.findElement(By.name("password"));
+		password.sendKeys("SecretPassword!");
+		
+		
+		
+		//Click login button
+		WebElement logInButton = driver.findElement(By.tagName("button"));
+		logInButton.click();
+		sleep(3000);
+		
+	 
+		
+		//Click drop down box in Accounting tab to get BANK account 
+		
+		WebElement AccountButton = driver.findElement(By.tagName("Accounting"));
+		AccountButton.click();
+		sleep(3000);
+		
+		//Find Bank account from Drop down box
+                Select  bankaccounttype = new  select(driver.findElement(By.xpath("//a[@cclass='xrh-submenu']"));
+		Drpaccounttype.selectByVisibleText(“BANKACCOUNT”)
+		BankaccountButton.click();
+		sleep(1000);
+		
+		//click on Add tab on "add bank account"
+		
+		WebElement addbankaccountButton = Driver.findElement(By.tagName(""Add Bank Account-button")"
+		BankaccountButton.click();
+		sleep(1000);
+		
+		//select ANZ from search field
+		
+		WebElement searchfield= driver.findElement(By.name("xui-searchfield-1018-inputEl\"));
+		password.sendKeys("ANZ(AU)");
+				
+		
+		//enter account name and account type
+		
+		WebElement accountname = driver.findElement(By.tagname("accountname-1037-inputEl"));
+		username.sendKeys("Rajesh");
+		
+		//select account type
+		
+		WebElement accountye = driver.findElement(By.id("accounttype-1039-inputEl"));
+		Accountname.click();
+		sleep (3000)
+		
+		//Select "every day" account from drop down
+		
+		Select  drpaccounttype = new  select(driver.findElement(By.name(“accounttype-1039-inputEl"));
+		Drpaccounttype.selectByVisibleText(“Every-day-day”)
+
+					
+		//enter BSB details
+		WebElement accountname = driver.findElement(By.tagname("accountnumber-1046-inputEl\"));
+		username.sendKeys("123456");
+		
+		//enter account Number
+		WebElement accountname = driver.findElement(By.tagname(""accountnumber-1046-inputEl\"));
+		username.sendKeys("305596");
+		
+		//Click on Continue button to progress further 
+		WebElement continueButton = driver.findElement(By.id("common-button-submit-1015-btnInnerEl"]"));"
+		continueButton.click();
+		sleep(1000)
+				
+		
+		//Verify successful additional message info
+				
+		
+				WebElement successMessage = driver.findElement(By.xpath("//div[@id='flash']"));
+				String expectedMessage = "rajesh has been added";
+				String actualMessage = successMessage.getText();
+				// Assert.assertEquals(actualMessage, expectedMessage, "Actual message is not
+				// the same as expected");
+				Assert.assertTrue(actualMessage.contains(expectedMessage),
+						"Actual message does not contain expected message.\nActual Message: " + actualMessage
+								+ "\nExpected Message: " + expectedMessage);
+		
+				//close browser
+				driver.quit();
+		
+		
+		//		 logout button is visible
+		//WebElement logOutButton = driver.findElement(By.xpath("//a[@class='button secondary radius']"));
+		
+			
+		//close browser
+		driver.quit();
+		
+	}
+
+	private void sleep(long m) {
+		try {
+			Thread.sleep(m);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+
+}
